@@ -4,6 +4,9 @@ export class Movie{
     public language:string;
     public year:number;
     public _id:string;
-    
+    constructor(_id:string,title:string,director:string,language:string,year:number){
+
+    }
+  
     
 }

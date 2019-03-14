@@ -11,14 +11,19 @@ export class AppComponent implements OnInit {
   
   title = 'Angular Unit Testing';
 
+  public movies:Movie[]=[];
+
   public constructor(private movieService:MovieService){
 
   }
 
   ngOnInit(): void {
-    this.movieService.getMovies().subscribe((data:[])=>{
-        console.log(data);
+    this.movieService.getMovies().subscribe((movies:[])=>{
+        console.log("Nagendra");
+        console.log(movies);
+        this.movies=movies;
     });
   }
+
 
 }
