@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from './movie.service';
+import { Movie } from './movie';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = 'angular7-testing';
+export class AppComponent implements OnInit {
+  
+  title = 'Angular Unit Testing';
+
+  public constructor(private movieService:MovieService){
+
+  }
+
+  ngOnInit(): void {
+    this.movieService.getMovies().subscribe((data:[])=>{
+        console.log(data);
+    });
+  }
+
 }
